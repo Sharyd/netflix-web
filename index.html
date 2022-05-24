@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="script.js" defer></script>
+    <title>Netflix carousel</title>
+  </head>
+  <body>
+    <header class="nav-header sticky">
+      <ul class="nav-list">
+        <img
+          src="img/Netflix-Logo-Header.jpg"
+          alt="Netflix header logo"
+          class="header-logo"
+        />
+        <li class="nav-list-li">
+          <a href="#" class="nav-link nav-link-active">Home</a>
+        </li>
+        <li class="nav-list-li"><a href="#" class="nav-link">Series</a></li>
+        <li class="nav-list-li"><a href="#" class="nav-link">Movies</a></li>
+        <li class="nav-list-li">
+          <a href="#" class="nav-link">New and top</a>
+        </li>
+        <li class="nav-list-li"><a href="#" class="nav-link">My list</a></li>
+      </ul>
+      <div class="merge-content">
+        <div class="search">
+          <button class="btn-search">
+            <svg class="search-icon">
+              <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+            </svg>
+          </button>
+          <input
+            type="text"
+            class="input-search"
+            placeholder="Series, movies..."
+          />
+        </div>
+        <div class="container-bell">
+          <button class="button-bell">
+            <ion-icon name="notifications-outline" class="icon-bell"></ion-icon>
+          </button>
+          <div class="hoover-news-menu hoover-set">
+            <div class="news-content">
+              <img src="img/hobbit.jpg" alt="hobbit" class="news-img" />
+              <div class="news-text-container">
+                <h2 class="news-text">Fantasy world in MiddleEarth</h2>
+                <span class="news-date">A week ago</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <img src="img/hollywood.jpg" alt="hobbit" class="news-img" />
+              <div class="news-text-container">
+                <h2 class="news-text">News in the filmography city</h2>
+                <span class="news-date">2 weeks ago</span>
+              </div>
+            </div>
+
+            <div class="news-content">
+              <img src="img/toy.jpg" alt="hobbit" class="news-img" />
+              <div class="news-text-container">
+                <h2 class="news-text">Best Toy Story news</h2>
+                <span class="news-date">A month ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="news-notification"></div>
+        <div class="user-profile__user">
+          <img
+            src="img/user-4.jpg"
+            alt="user profile"
+            class="user-profile__img"
+          />
+          <span class="user-rotate-notification">&#8249;</span>
+
+          <div class="user-hoover-menu hoover-set">
+            <div class="user-content">
+              <img src="img/user.jpg" alt="user 1" class="user-img" />
+              <span class="user-text">Skleny</span>
+            </div>
+            <div class="user-content">
+              <img src="img/user2.jpg" alt="user 2" class="user-img" />
+              <span class="user-text">Alex</span>
+            </div>
+            <div class="user-content">
+              <img src="img/user3.jpg" alt="user 3" class="user-img" />
+              <span class="user-text">Žlum</span>
+            </div>
+            <div class="user-content">
+              <img src="img/user5.jpg" alt="user 4" class="user-img" />
+              <span class="user-text">Hovno</span>
+            </div>
+            <a class="user-fix-profile">
+              <span class="user-text">Fix your profiles</span>
+            </a>
+
+            <div class="user-content-account">
+              <a class="user-menu-link">
+                <svg class="user-menu__icon">
+                  <use xlink:href="img/sprite.svg#icon-user"></use>
+                </svg>
+                <span class="user-text">Account</span>
+              </a>
+              <a class="user-menu-link">
+                <svg class="user-menu__icon">
+                  <use xlink:href="img/sprite.svg#icon-help"></use>
+                </svg>
+                <span class="user-text">Customer support <br />service</span>
+              </a>
+            </div>
+
+            <button class="logout">
+              <span class="user-text"> Logout from Netflix</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="row">
+        <div class="header">
+          <h3 class="title">Best Movies now</h3>
+          <div class="progress-bar"></div>
+        </div>
+        <div class="container">
+          <button class="handle left-handle">
+            <div class="text">&#8249;</div>
+          </button>
+          <div class="slider slider-number-1" data-slider="1">
+            <!-- <img src="https://via.placeholder.com/210/00FF00?text=1" />
+            <img src="https://via.placeholder.com/220/00FF00?text=2" />
+            <img src="https://via.placeholder.com/230/00FF00?text=3" />
+            <img src="https://via.placeholder.com/240/00FF00?text=4" />
+            <img src="https://via.placeholder.com/250/00FF00?text=5" />
+            <img src="https://via.placeholder.com/260/00FF00?text=6" />
+            <img src="https://via.placeholder.com/270/00FF00?text=7" />
+            <img src="https://via.placeholder.com/280/00FF00?text=8" />
+            <img src="https://via.placeholder.com/250/00FF00?text=9" />
+            <img src="https://via.placeholder.com/260/00FF00?text=10" />
+            <img src="https://via.placeholder.com/270/00FF00?text=11" />
+            <img src="https://via.placeholder.com/280/00FF00?text=12" />
+            <img src="https://via.placeholder.com/250/00FF00?text=13" />
+            <img src="https://via.placeholder.com/260/00FF00?text=14" />
+            <img src="https://via.placeholder.com/270/00FF00?text=15" />
+            <img src="https://via.placeholder.com/280/00FF00?text=16" />
+            <img src="https://via.placeholder.com/270/00FF00?text=17" />
+            <img src="https://via.placeholder.com/280/00FF00?text=18" /> -->
+
+            <!-- <h2 class="title">title</h2> -->
+          </div>
+          <button class="handle right-handle">
+            <div class="text">&#8250;</div>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">
+          <h3 class="title"></h3>
+          <div class="progress-bar"></div>
+        </div>
+        <div class="container">
+          <button class="handle left-handle">
+            <div class="text">&#8249;</div>
+          </button>
+          <div class="slider slider-number-2" data-slider="2">
+            <!-- <img src="https://via.placeholder.com/210/00FF00?text=1" />
+            <img src="https://via.placeholder.com/220/00FF00?text=2" />
+            <img src="https://via.placeholder.com/230/00FF00?text=3" />
+            <img src="https://via.placeholder.com/240/00FF00?text=4" />
+            <img src="https://via.placeholder.com/250/00FF00?text=5" />
+            <img src="https://via.placeholder.com/260/00FF00?text=6" />
+            <img src="https://via.placeholder.com/270/00FF00?text=7" />
+            <img src="https://via.placeholder.com/280/00FF00?text=8" />
+            <img src="https://via.placeholder.com/250/00FF00?text=9" />
+            <img src="https://via.placeholder.com/260/00FF00?text=10" />
+            <img src="https://via.placeholder.com/270/00FF00?text=11" />
+            <img src="https://via.placeholder.com/280/00FF00?text=12" />
+            <img src="https://via.placeholder.com/250/00FF00?text=13" />
+            <img src="https://via.placeholder.com/260/00FF00?text=14" />
+            <img src="https://via.placeholder.com/270/00FF00?text=15" />
+            <img src="https://via.placeholder.com/280/00FF00?text=16" />
+            <img src="https://via.placeholder.com/270/00FF00?text=17" />
+            <img src="https://via.placeholder.com/280/00FF00?text=18" /> -->
+          </div>
+          <button class="handle right-handle">
+            <div class="text">&#8250;</div>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">
+          <h3 class="title"></h3>
+          <div class="progress-bar"></div>
+        </div>
+        <div class="container">
+          <button class="handle left-handle">
+            <div class="text">&#8249;</div>
+          </button>
+          <div class="slider slider-number-3" data-slider="3">
+            <!-- <img src="https://via.placeholder.com/210/00FF00?text=1" />
+            <img src="https://via.placeholder.com/220/00FF00?text=2" />
+            <img src="https://via.placeholder.com/230/00FF00?text=3" />
+            <img src="https://via.placeholder.com/240/00FF00?text=4" />
+            <img src="https://via.placeholder.com/250/00FF00?text=5" />
+            <img src="https://via.placeholder.com/260/00FF00?text=6" />
+            <img src="https://via.placeholder.com/270/00FF00?text=7" />
+            <img src="https://via.placeholder.com/280/00FF00?text=8" />
+            <img src="https://via.placeholder.com/250/00FF00?text=9" />
+            <img src="https://via.placeholder.com/260/00FF00?text=10" />
+            <img src="https://via.placeholder.com/270/00FF00?text=11" />
+            <img src="https://via.placeholder.com/280/00FF00?text=12" />
+            <img src="https://via.placeholder.com/250/00FF00?text=13" />
+            <img src="https://via.placeholder.com/260/00FF00?text=14" />
+            <img src="https://via.placeholder.com/270/00FF00?text=15" />
+            <img src="https://via.placeholder.com/280/00FF00?text=16" />
+            <img src="https://via.placeholder.com/270/00FF00?text=17" />
+            <img src="https://via.placeholder.com/280/00FF00?text=18" /> -->
+          </div>
+          <button class="handle right-handle">
+            <div class="text">&#8250;</div>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">
+          <h3 class="title"></h3>
+          <div class="progress-bar"></div>
+        </div>
+        <div class="container">
+          <button class="handle left-handle">
+            <div class="text">&#8249;</div>
+          </button>
+          <div class="slider slider-number-4" data-slider="4">
+            <!-- <img src="https://via.placeholder.com/210/00FF00?text=1" />
+            <img src="https://via.placeholder.com/220/00FF00?text=2" />
+            <img src="https://via.placeholder.com/230/00FF00?text=3" />
+            <img src="https://via.placeholder.com/240/00FF00?text=4" />
+            <img src="https://via.placeholder.com/250/00FF00?text=5" />
+            <img src="https://via.placeholder.com/260/00FF00?text=6" />
+            <img src="https://via.placeholder.com/270/00FF00?text=7" />
+            <img src="https://via.placeholder.com/280/00FF00?text=8" />
+            <img src="https://via.placeholder.com/250/00FF00?text=9" />
+            <img src="https://via.placeholder.com/260/00FF00?text=10" />
+            <img src="https://via.placeholder.com/270/00FF00?text=11" />
+            <img src="https://via.placeholder.com/280/00FF00?text=12" />
+            <img src="https://via.placeholder.com/250/00FF00?text=13" />
+            <img src="https://via.placeholder.com/260/00FF00?text=14" />
+            <img src="https://via.placeholder.com/270/00FF00?text=15" />
+            <img src="https://via.placeholder.com/280/00FF00?text=16" />
+            <img src="https://via.placeholder.com/270/00FF00?text=17" />
+            <img src="https://via.placeholder.com/280/00FF00?text=18" /> -->
+          </div>
+          <button class="handle right-handle">
+            <div class="text">&#8250;</div>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="header">
+          <h3 class="title"></h3>
+          <div class="progress-bar"></div>
+        </div>
+        <div class="container">
+          <button class="handle left-handle">
+            <div class="text">&#8249;</div>
+          </button>
+          <div class="slider slider-number-5" data-slider="5">
+            <!-- <img src="https://via.placeholder.com/210/00FF00?text=1" />
+            <img src="https://via.placeholder.com/220/00FF00?text=2" />
+            <img src="https://via.placeholder.com/230/00FF00?text=3" />
+            <img src="https://via.placeholder.com/240/00FF00?text=4" />
+            <img src="https://via.placeholder.com/250/00FF00?text=5" />
+            <img src="https://via.placeholder.com/260/00FF00?text=6" />
+            <img src="https://via.placeholder.com/270/00FF00?text=7" />
+            <img src="https://via.placeholder.com/280/00FF00?text=8" />
+            <img src="https://via.placeholder.com/250/00FF00?text=9" />
+            <img src="https://via.placeholder.com/260/00FF00?text=10" />
+            <img src="https://via.placeholder.com/270/00FF00?text=11" />
+            <img src="https://via.placeholder.com/280/00FF00?text=12" />
+            <img src="https://via.placeholder.com/250/00FF00?text=13" />
+            <img src="https://via.placeholder.com/260/00FF00?text=14" />
+            <img src="https://via.placeholder.com/270/00FF00?text=15" />
+            <img src="https://via.placeholder.com/280/00FF00?text=16" />
+            <img src="https://via.placeholder.com/270/00FF00?text=17" />
+            <img src="https://via.placeholder.com/280/00FF00?text=18" /> -->
+          </div>
+          <button class="handle right-handle">
+            <div class="text">&#8250;</div>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
