@@ -550,3 +550,21 @@ html {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.9);
 }
+
+
+/* hidden nav */
+@media only screen and (max-width: 900px) {
+  .nav-list-li {
+    display: none;
+
+  }
+  .hoover-news-menu {
+  left: -25rem;
+ 
+}
+
+.hoover-news-menu::before {
+  right: 12.4rem;
+ 
+}
+}

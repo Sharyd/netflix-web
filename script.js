@@ -8,15 +8,12 @@ const search = document.querySelector(".search");
 const btnSearch = document.querySelector(".btn-search");
 
 const main = document.querySelector(".main");
+const form = document.getElementById("form");
+const searchForm = document.getElementById("search");
 
 const imgTargets = document.querySelectorAll("img[data-src]");
 
-// function setPages() {
-//   slider.forEach((_, i) => {
-//     return (API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=
-//     e00d91837043728a57896d1948c55a16&page=${i + 1}`);
-//   });
-// }
+
 btnSearch.addEventListener("click", function () {
   search.classList.toggle("active-search");
   input.focus();
@@ -29,11 +26,10 @@ const APIMap = arrSlider.map((slider) => {
 });
 
 async function getMovies(url) {
-  url.forEach(async function (url) {
+  return url.map(async function (url) {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data);
 
       showMovies(data.results, data.page);
     } catch (err) {
@@ -43,6 +39,7 @@ async function getMovies(url) {
 }
 
 getMovies(APIMap);
+
 // setPages();
 
 function showMovies(movies, page) {
@@ -59,7 +56,6 @@ function showMovies(movies, page) {
     `;
 
     slider.forEach((slider) => {
-      console.log(slider.length);
       if (+slider.dataset.slider === page) {
         slider.insertAdjacentHTML("beforeend", markup);
       }
@@ -76,6 +72,19 @@ function getClassByRate(vote) {
     return `red`;
   }
 }
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const searchTerm = searchForm.value;
+
+  if (searchTerm && searchTerm !== "") {
+
+    getMovies(SEARCH_API + searchTerm);
+
+    searchForm.value = "";
+  }
+});
 
 // Scrolling sticky NAV
 
@@ -115,7 +124,6 @@ function calculateProgressBar(progressBar) {
   const slider = progressBar.closest(".row").querySelector(".slider");
 
   const itemCount = slider.children.length / 2;
-  console.log(itemCount);
 
   const itemsPerScreen = parseInt(
     getComputedStyle(slider).getPropertyValue("--items-per-screen")
@@ -134,7 +142,6 @@ function calculateProgressBar(progressBar) {
     const barItem = document.createElement("div");
     barItem.classList.add("progress-item");
     if (i === sliderIndex) {
-      console.log(progressBarItemCount);
       barItem.classList.add("active");
     }
     progressBar.append(barItem);
